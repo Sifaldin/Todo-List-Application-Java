@@ -14,9 +14,9 @@ public class TasksDisplay extends Actions{
 
     @Override
     public void executeAction(String command) {
-        Main.tasks.forEach((key, task) -> {
+        ToDoList.tasks.forEach((key, task) -> {
             System.out.println("ID: " + key + ", Title: " + task.getTitle() + ", Due Date: "
-            + DateSorting.convertDateToString(task.getDueDate(), "dd-mm-yyyy") + ", Status: "
+            + DateSorting.convertDateToString(task.getDueDate(), "dd-MM-yyyy") + ", Status: "
             + task.getStatus() + ", Project: " + task.getProjectName());
         });
 

@@ -19,21 +19,21 @@ public class DateSorting extends Actions {
 
     @Override
     public void executeAction(String command) {
-        List<Map.Entry<String, Task>> entries = new ArrayList<>(Main.tasks.entrySet());
+        List<Map.Entry<String, Task>> entries = new ArrayList<>(ToDoList.tasks.entrySet());
         Collections.sort(entries, new Comparator<Map.Entry<String, Task>>(){
             @Override
             public int compare(Map.Entry<String, Task> task1, Map.Entry<String, Task> task2){
-                LocalDate dueDateTask1 = task1.getValue().getDueDate();
-                LocalDate dueDateTask2 = task2.getValue().getDueDate();
-                int result = dueDateTask1.compareTo(dueDateTask2);
+                LocalDate dueDateFirstTask = task1.getValue().getDueDate();
+                LocalDate dueDateSecondTask = task2.getValue().getDueDate();
+                int result = dueDateFirstTask.compareTo(dueDateSecondTask);
                 return result;
             }
 
         });
 
-        Main.tasks.clear();
+        ToDoList.tasks.clear();
         entries.forEach((entry) -> {
-            Main.tasks.put(entry.getKey(), entry.getValue());
+            ToDoList.tasks.put(entry.getKey(), entry.getValue());
         });
 
         System.err.println("");

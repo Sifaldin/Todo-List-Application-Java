@@ -22,7 +22,7 @@ public class RemoveTask extends Actions{
                 String userInput = in.nextLine();
                 int userInputAsNum = Integer.parseInt(userInput);
                 if(userInputAsNum != 0){
-                    Task task = Main.tasks.get(userInput);
+                    Task task = ToDoList.tasks.get(userInput);
                     if(task != null){
                         return userInput;
                     }else {
@@ -42,7 +42,7 @@ public class RemoveTask extends Actions{
 
     @Override
     public void executeAction(String command) {
-        Main.tasks.remove(command);
+        ToDoList.tasks.remove(command);
 
         System.out.println("Task with ID: "+ command + ", was successfully removed...");
 

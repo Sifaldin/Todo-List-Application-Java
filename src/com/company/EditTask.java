@@ -38,7 +38,7 @@ public class EditTask extends Actions{
                     }
 
                     if(isDateValid){
-                        if(Main.tasks.get(parts[0]) != null) {
+                        if(ToDoList.tasks.get(parts[0]) != null) {
                             return userInput;
                         }  else {
                             System.out.println("ID doesn't exist, try again: ");
@@ -63,21 +63,21 @@ public class EditTask extends Actions{
 
         boolean isTaskEdited = false;
         if(!parts[1].equals("-")){
-            Main.tasks.get(parts[0]).setTitle(parts[1]);
+            ToDoList.tasks.get(parts[0]).setTitle(parts[1]);
             isTaskEdited = true;
         }
 
         if(!parts[2].equals("-")){
-            Main.tasks.get(parts[0]).setDueDate(DateSorting.parseDate("dd-mm-yyyy", parts[2]));
+            ToDoList.tasks.get(parts[0]).setDueDate(DateSorting.parseDate("dd-mm-yyyy", parts[2]));
             isTaskEdited = true;
         }
 
         if(!parts[3].equals("-")){
-            Main.tasks.get(parts[0]).setStatus(parts[3]);
+            ToDoList.tasks.get(parts[0]).setStatus(parts[3]);
             isTaskEdited = true;
         }
         if (!parts [4].equals("-")){
-            Main.tasks.get(parts[0]).setProjectName(parts[4]);
+            ToDoList.tasks.get(parts[0]).setProjectName(parts[4]);
             isTaskEdited = true;
         }
         if (isTaskEdited){

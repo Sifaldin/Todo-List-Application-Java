@@ -22,7 +22,7 @@ public class MarkAsDone extends Actions {
                 String userInput = in.nextLine();
                 int userInputAsNum = Integer.parseInt(userInput);
                 if(userInputAsNum != 0){
-                    Task task = Main.tasks.get(userInput);
+                    Task task = ToDoList.tasks.get(userInput);
                     if(task != null){
                         return userInput;
                     } else {
@@ -39,7 +39,7 @@ public class MarkAsDone extends Actions {
 
     @Override
     public void executeAction(String command) {
-        Main.tasks.get(command).setStatus("Done");
+        ToDoList.tasks.get(command).setStatus("Done");
         System.out.println("Status is set as Done for the task with ID: " + command);
 
     }
