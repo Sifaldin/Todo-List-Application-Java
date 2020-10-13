@@ -81,6 +81,11 @@ public class ToDoList {
                 action.executeAction(null);
                 break;
 
+            case Actions.SORT_TASKS_PROJECT:
+                action = new ProjectSorting();
+                action.executeAction(null);
+                break;
+
             case Actions.EXIT:
                 applicationRunning = false;
                 break;
