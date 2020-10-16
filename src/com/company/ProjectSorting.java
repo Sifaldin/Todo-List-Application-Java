@@ -31,7 +31,8 @@ public class ProjectSorting extends Actions {
         });
 
         ToDoList.tasks.clear();
-        entries.forEach(entry -> { ToDoList.tasks.put(entry.getKey(), entry.getValue());
+        entries.forEach(entry -> {
+            ToDoList.tasks.put(entry.getKey(), entry.getValue());
         });
 
         System.out.println("Tasks successfully sorted");

@@ -20,9 +20,9 @@ public class DateSorting extends Actions {
     @Override
     public void executeAction(String command) {
         List<Map.Entry<String, Task>> entries = new ArrayList<>(ToDoList.tasks.entrySet());
-        Collections.sort(entries, new Comparator<Map.Entry<String, Task>>(){
+        Collections.sort(entries, new Comparator<Map.Entry<String, Task>>() {
             @Override
-            public int compare(Map.Entry<String, Task> task1, Map.Entry<String, Task> task2){
+            public int compare(Map.Entry<String, Task> task1, Map.Entry<String, Task> task2) {
                 LocalDate dueDateFirstTask = task1.getValue().getDueDate();
                 LocalDate dueDateSecondTask = task2.getValue().getDueDate();
                 int result = dueDateFirstTask.compareTo(dueDateSecondTask);
@@ -40,32 +40,32 @@ public class DateSorting extends Actions {
 
     }
 
-    public static boolean isDateValid(String format, String value){
+    public static boolean isDateValid(String format, String value) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
-        try{
+        try {
             LocalDate localDate = LocalDate.parse(value, formatter);
             String result = localDate.format(formatter);
 
             return result.equals(value);
-        }     catch (DateTimeParseException err){
+        } catch (DateTimeParseException err) {
 
         }
         return false;
     }
 
-    public static String convertDateToString(LocalDate date, String format){
+    public static String convertDateToString(LocalDate date, String format) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
         String result = null;
         try {
             result = date.format(formatter);
 
-        }     catch (DateTimeParseException err) {
+        } catch (DateTimeParseException err) {
 
         }
-          return result;
+        return result;
     }
 
-    public static LocalDate parseDate(String format, String value){
+    public static LocalDate parseDate(String format, String value) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
         LocalDate localDate = LocalDate.parse(value, formatter);
         return localDate;

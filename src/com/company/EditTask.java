@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-public class EditTask extends Actions{
+public class EditTask extends Actions {
 
 
     @Override
@@ -18,32 +18,32 @@ public class EditTask extends Actions{
 
     @Override
     public String readUserInput() {
-        while(true){
+        while (true) {
             System.out.println("");
             System.out.println("Enter information");
             Scanner in = new Scanner(System.in);
             String userInput = in.nextLine();
 
-            if(!userInput.equals(0)){
-                String []   parts = userInput.split(",");
-                if(parts.length == 5){
+            if (!userInput.equals(0)) {
+                String[] parts = userInput.split(",");
+                if (parts.length == 5) {
                     boolean dateValidationRequired = true;
-                    if(parts[2].equals("-")){
+                    if (parts[2].equals("-")) {
                         dateValidationRequired = false;
                     }
 
                     boolean isDateValid = true;
-                    if(dateValidationRequired){
+                    if (dateValidationRequired) {
                         isDateValid = DateSorting.isDateValid("dd-mm-yyyy", parts[2]);
                     }
 
-                    if(isDateValid){
-                        if(ToDoList.tasks.get(parts[0]) != null) {
+                    if (isDateValid) {
+                        if (ToDoList.tasks.get(parts[0]) != null) {
                             return userInput;
-                        }  else {
+                        } else {
                             System.out.println("ID doesn't exist, try again: ");
                         }
-                    }  else {
+                    } else {
                         System.out.println("Please follow instructions or enter 0 to RETURN");
                     }
                 } else {
@@ -53,38 +53,35 @@ public class EditTask extends Actions{
         }
 
 
-
     }
 
     @Override
     public void executeAction(String command) {
 
-        String [] parts = command.split(",");
+        String[] parts = command.split(",");
 
         boolean isTaskEdited = false;
-        if(!parts[1].equals("-")){
+        if (!parts[1].equals("-")) {
             ToDoList.tasks.get(parts[0]).setTitle(parts[1]);
             isTaskEdited = true;
         }
 
-        if(!parts[2].equals("-")){
+        if (!parts[2].equals("-")) {
             ToDoList.tasks.get(parts[0]).setDueDate(DateSorting.parseDate("dd-mm-yyyy", parts[2]));
             isTaskEdited = true;
         }
 
-        if(!parts[3].equals("-")){
+        if (!parts[3].equals("-")) {
             ToDoList.tasks.get(parts[0]).setStatus(parts[3]);
             isTaskEdited = true;
         }
-        if (!parts [4].equals("-")){
+        if (!parts[4].equals("-")) {
             ToDoList.tasks.get(parts[0]).setProjectName(parts[4]);
             isTaskEdited = true;
         }
-        if (isTaskEdited){
+        if (isTaskEdited) {
             System.out.println("Tasks successfully updated!!");
-        }
-
-        else{
+        } else {
             System.out.println("No change was applied...");
         }
     }

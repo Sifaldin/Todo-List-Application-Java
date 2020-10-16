@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.IOException;
+
 public abstract class Actions {
 
     //Capitalizing all letters and separating them by underscores is a java naming
@@ -21,7 +23,6 @@ public abstract class Actions {
     public abstract String readUserInput();
 
     public abstract void executeAction(String command);
-
 
 
 }

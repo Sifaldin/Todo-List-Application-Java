@@ -14,16 +14,16 @@ public class MarkAsDone extends Actions {
 
     @Override
     public String readUserInput() {
-        while(true){
+        while (true) {
             System.out.println("");
             System.out.print("Enter task id:");
             Scanner in = new Scanner(System.in);
-            try{
+            try {
                 String userInput = in.nextLine();
                 int userInputAsNum = Integer.parseInt(userInput);
-                if(userInputAsNum != 0){
+                if (userInputAsNum != 0) {
                     Task task = ToDoList.tasks.get(userInput);
-                    if(task != null){
+                    if (task != null) {
                         return userInput;
                     } else {
                         System.out.println("There is no task with this ID, try again: ");
@@ -31,7 +31,7 @@ public class MarkAsDone extends Actions {
                 } else {
                     return userInput;
                 }
-            } catch (Exception err)   {
+            } catch (Exception err) {
                 System.out.println("Enter a valid ID or 0 to RETURN");
             }
         }

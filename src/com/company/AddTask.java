@@ -16,19 +16,19 @@ public class AddTask extends Actions {
 
     @Override
     public String readUserInput() {
-        while(true){
+        while (true) {
             System.out.println("");
             System.out.print("Enter Information: ");
             Scanner in = new Scanner(System.in);
             String userInput = in.nextLine();
 
-            if(!userInput.equals("0")){
+            if (!userInput.equals("0")) {
                 String[] parts = userInput.split(",");
-                if(parts.length == 5){
-                    if(DateSorting.isDateValid("dd-MM-yyyy", parts[2])){
-                        if(ToDoList.tasks.get(parts[0]) == null){
+                if (parts.length == 5) {
+                    if (DateSorting.isDateValid("dd-MM-yyyy", parts[2])) {
+                        if (ToDoList.tasks.get(parts[0]) == null) {
                             return userInput;
-                        } else{
+                        } else {
                             System.out.println("A task with this ID already exists, try again: ");
                         }
                     } else {
@@ -45,7 +45,7 @@ public class AddTask extends Actions {
 
     @Override
     public void executeAction(String command) {
-        String [] parts = command.split(",");
+        String[] parts = command.split(",");
         Task task = Task.buildTask(parts[0], parts[1], DateSorting.parseDate("dd-MM-yyyy", parts[2]),
                 parts[3], parts[4]);
 
