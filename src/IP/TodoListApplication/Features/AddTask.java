@@ -1,4 +1,8 @@
-package IP.TodoListApplication;
+package IP.TodoListApplication.Features;
+
+import IP.TodoListApplication.DataSorting.DateSorting;
+import IP.TodoListApplication.App.Task;
+import IP.TodoListApplication.App.ToDoList;
 
 import java.util.Scanner;
 

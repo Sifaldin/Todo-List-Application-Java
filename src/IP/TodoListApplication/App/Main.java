@@ -1,4 +1,4 @@
-package IP.TodoListApplication;
+package IP.TodoListApplication.App;
 
 public class Main {
 

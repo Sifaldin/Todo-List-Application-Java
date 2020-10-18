@@ -1,4 +1,4 @@
-package IP.TodoListApplication;
+package IP.TodoListApplication.Features;
 
 public abstract class Actions {
 

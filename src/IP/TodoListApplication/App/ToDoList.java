@@ -1,4 +1,10 @@
-package IP.TodoListApplication;
+package IP.TodoListApplication.App;
+
+import IP.TodoListApplication.DataSorting.DateSorting;
+import IP.TodoListApplication.DataSorting.ProjectSorting;
+import IP.TodoListApplication.Features.*;
+import IP.TodoListApplication.SaveRead.ReadTasksFromFile;
+import IP.TodoListApplication.SaveRead.SaveTasksToFile;
 
 import java.util.*;
 

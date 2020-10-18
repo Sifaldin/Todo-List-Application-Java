@@ -1,4 +1,8 @@
-package IP.TodoListApplication;
+package IP.TodoListApplication.DataSorting;
+
+import IP.TodoListApplication.App.Task;
+import IP.TodoListApplication.App.ToDoList;
+import IP.TodoListApplication.Features.Actions;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

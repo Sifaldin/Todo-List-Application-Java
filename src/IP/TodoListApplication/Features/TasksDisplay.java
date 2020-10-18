@@ -1,4 +1,7 @@
-package IP.TodoListApplication;
+package IP.TodoListApplication.Features;
+
+import IP.TodoListApplication.DataSorting.DateSorting;
+import IP.TodoListApplication.App.ToDoList;
 
 public class TasksDisplay extends Actions {
     @Override
