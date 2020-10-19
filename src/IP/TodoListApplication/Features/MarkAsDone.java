@@ -5,8 +5,22 @@ import IP.TodoListApplication.App.ToDoList;
 
 import java.util.Scanner;
 
+/**
+ * This class is part of the TodoList application.
+ * MarkAsDone holds all methods related to setting a task as a
+ * done with task in our TodoList
+ *
+ * @author Sif Aldin Abbas
+ * @version 2020.10.24
+ */
+
 public class MarkAsDone extends Actions {
 
+    /**
+     * This method purpose is to act as a user guide
+     * on how marking a task as done should be used for the user to
+     * to ease usage and minimize crashes
+     */
     @Override
     public void showActionsInformation() {
         System.out.println("");
@@ -15,6 +29,17 @@ public class MarkAsDone extends Actions {
         System.out.println("Enter 0 to RETURN");
     }
 
+
+    /**
+     * In this overridden method reside the implementation of
+     * how this program read user's input by using a scanner inside a while loop
+     * and then checking multiple points to ensure a successful performance
+     * <p>
+     * it will check against components completion
+     * ID and task existence
+     *
+     * @return userInput user's inserted information
+     */
     @Override
     public String readUserInput() {
         while (true) {
@@ -40,6 +65,15 @@ public class MarkAsDone extends Actions {
         }
     }
 
+    /**
+     * In this overridden method reside the implementation of
+     * of how marking a task as done method is executed and will later be used
+     * in the switch statement that runs the program
+     * <p>
+     * its main purpose is to set a task's status with a given ID to Done
+     *
+     * @param command command to look up
+     */
     @Override
     public void executeAction(String command) {
         ToDoList.tasks.get(command).setStatus("Done");

@@ -5,9 +5,23 @@ import IP.TodoListApplication.App.ToDoList;
 
 import java.util.Scanner;
 
+
+/**
+ * This class is part of the TodoList application.
+ * EditTask holds all methods related to edit an existing task
+ * to our TodoList
+ *
+ * @author Sif Aldin Abbas
+ * @version 2020.10.24
+ */
 public class EditTask extends Actions {
 
 
+    /**
+     * This method purpose is to act as a user guide
+     * on how editing a task should be used for the user to
+     * to ease usage and minimize crashes
+     */
     @Override
     public void showActionsInformation() {
         System.out.println("");
@@ -19,6 +33,18 @@ public class EditTask extends Actions {
         System.out.println("Enter 0 to RETURN");
     }
 
+    /**
+     * In this overridden method reside the implementation of
+     * how this program read user's input by using a scanner inside a while loop
+     * and then checking multiple points to ensure a successful performance
+     * <p>
+     * it will check against components completion
+     * ID existence
+     * validity of date
+     * and if the user correctly followed instructions
+     *
+     * @return userInput user's inserted information
+     */
     @Override
     public String readUserInput() {
         while (true) {
@@ -58,6 +84,16 @@ public class EditTask extends Actions {
 
     }
 
+    /**
+     * In this overridden method reside the implementation of
+     * of how editing a task method is executed and will later be used
+     * in the switch statement that runs the program
+     * <p>
+     * and it will check against all components
+     * to see if a change is applied or not
+     *
+     * @param command command to look up
+     */
     @Override
     public void executeAction(String command) {
 

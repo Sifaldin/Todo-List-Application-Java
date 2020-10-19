@@ -10,7 +10,24 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+
+/**
+ * This class is part of the TodoList application.
+ * SaveTasksToFile holds all methods related to save
+ * the tasks inserted by the user to a local existing file
+ *
+ * @author Sif Aldin Abbas
+ * @version 2020.10.24
+ */
+
 public class SaveTasksToFile extends Actions {
+
+    /**
+     * This method purpose is to act as a user guide
+     * on how saving a task is done and how it should be used for the user to
+     * to ease their usage and minimize related crashes
+     */
+
     @Override
     public void showActionsInformation() {
         System.out.println("");
@@ -19,6 +36,13 @@ public class SaveTasksToFile extends Actions {
         System.out.println("");
         System.out.println("Enter 0 to RETURN");
     }
+
+    /**
+     * In this overridden method reside the implementation of
+     * how this program read user's input
+     *
+     * @return userInput user's inserted information
+     */
 
     @Override
     public String readUserInput() {
@@ -34,6 +58,15 @@ public class SaveTasksToFile extends Actions {
         }
     }
 
+    /**
+     * In this overridden method reside the implementation of
+     * of how a given path is taken from the user
+     * logged into to save information of tasks inserted by the user
+     * <p>
+     * it used a PrintWriter and print out a message to confirm success or failure
+     *
+     * @param path path to the local files for tasks to be saved in
+     */
     @Override
     public void executeAction(String path) {
         try {

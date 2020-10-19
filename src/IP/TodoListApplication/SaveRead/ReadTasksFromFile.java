@@ -9,7 +9,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+
+/**
+ * This class is part of the TodoList application.
+ * ReadTasksFromFile holds all methods related to printing out
+ * the tasks to the user from a local existing file
+ *
+ * @author Sif Aldin Abbas
+ * @version 2020.10.24
+ */
 public class ReadTasksFromFile extends Actions {
+    /**
+     * This method purpose is to act as a user guide
+     * on how reading a task is done and how it should be used for the user to
+     * to ease their usage and minimize related crashes
+     */
     @Override
     public void showActionsInformation() {
         System.out.println("");
@@ -17,6 +31,13 @@ public class ReadTasksFromFile extends Actions {
         System.out.println("");
         System.out.println("Enter 0 to RETURN");
     }
+
+    /**
+     * In this overridden method reside the implementation of
+     * how this program read user's input by using a scanner inside a while loop
+     *
+     * @return userInput user's inserted information
+     */
 
     @Override
     public String readUserInput() {
@@ -30,6 +51,14 @@ public class ReadTasksFromFile extends Actions {
             return userInput;
         }
     }
+
+    /**
+     * In this overridden method reside the implementation of
+     * of how a given path is taken from the user
+     * logged into to fetch information and display it to user
+     *
+     * @param path path of the local file to be read by the program
+     */
 
     @Override
     public void executeAction(String path) {

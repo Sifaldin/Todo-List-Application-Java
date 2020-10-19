@@ -1,17 +1,37 @@
 package IP.TodoListApplication.App;
 
-import IP.TodoListApplication.DataSorting.DateSorting;
-import IP.TodoListApplication.DataSorting.ProjectSorting;
+import IP.TodoListApplication.Features.Actions;
 import IP.TodoListApplication.Features.*;
-import IP.TodoListApplication.SaveRead.ReadTasksFromFile;
-import IP.TodoListApplication.SaveRead.SaveTasksToFile;
+import IP.TodoListApplication.DataSorting.*;
+import IP.TodoListApplication.SaveRead.*;
 
 import java.util.*;
 
+/**
+ * This class is part of the TodoList Application.
+ * <p>
+ * ToDolIST is the main entity where all classes and
+ * features are connected and implemented.
+ *
+ * @author Sif Aldin Abbas
+ * @version 2020.10.24
+ */
 public class ToDoList {
+
+    /**
+     * linkedHashMap was used to maintain insertion order
+     * <p>
+     * applicationRunning is used as an indicator and a boolean expression
+     * in the loops and switch statements below
+     */
     public static Map<String, Task> tasks = new LinkedHashMap<>();
     public static boolean applicationRunning = true;
 
+    /**
+     * This method start the application by running an infinite loop
+     * to make sure the app keeps running as long as we are using it
+     * and using the switch statement implemented in another method
+     */
 
     public void start() {
         showApplicationTitle();
@@ -22,6 +42,15 @@ public class ToDoList {
 
         }
     }
+
+    /**
+     * This method runs a switch statement in where it instantiate objects
+     * made of classes that I created as features of the application
+     * <p>
+     * for it to be used to in the start() method
+     *
+     * @param actionNumber the action that the user will insert
+     */
 
     public void executeAction(int actionNumber) {
         Actions action;
@@ -121,11 +150,21 @@ public class ToDoList {
         }
     }
 
+    /**
+     * This method will only welcome the user by printing out
+     * the application title to help with the visualization
+     */
     public void showApplicationTitle() {
         System.out.println("To DO List Application");
         System.out.println("-----------------------");
     }
 
+    /**
+     * This method will display all the actions/features
+     * that the user might need, to ease the application usage.
+     * <p>
+     * Will be used to print all valid actions
+     */
     public void showAvailableActions() {
         System.out.println("");
         System.out.println("1. Add a task");
@@ -141,6 +180,13 @@ public class ToDoList {
         System.out.println("");
     }
 
+    /**
+     * readAction will allow the user to chose an action from the list,
+     * checks if its a valid insertion by the user
+     * then pass it to the start() method
+     *
+     * @return userInput to the start() method, for it to be used
+     */
     public int readAction() {
         List<Integer> availableActions = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         while (true) {
@@ -153,7 +199,7 @@ public class ToDoList {
                 } else {
                     System.out.println("Please enter a valid action from the list: ");
                 }
-            } catch (Exception err) {
+            } catch (Exception e) {
                 System.out.println("Action must be a number...");
 
             }
