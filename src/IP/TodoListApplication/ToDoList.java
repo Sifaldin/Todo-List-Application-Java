@@ -99,8 +99,8 @@ public class ToDoList {
                 }
                 break;
 
-            case Actions.READ_TASKS_FROM_FILE:
-                action = new ReadTasksFromFile();
+            case Actions.READ_FROM_FILE:
+                action = new ReadFromFile();
                 action.showActionsInformation();
                 String path = action.readUserInput();
                 if (!path.equals("0"))

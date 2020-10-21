@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class ReadTasksFromFile extends Actions {
+public class ReadFromFile extends Actions {
     @Override
     public void showActionsInformation() {
         System.out.println("");
