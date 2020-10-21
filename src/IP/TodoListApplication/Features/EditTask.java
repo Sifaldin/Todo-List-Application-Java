@@ -1,7 +1,7 @@
 package IP.TodoListApplication.Features;
 
+import IP.TodoListApplication.App.TodoList;
 import IP.TodoListApplication.DataSorting.DateSorting;
-import IP.TodoListApplication.App.ToDoList;
 
 import java.util.Scanner;
 
@@ -67,7 +67,7 @@ public class EditTask extends Actions {
                     }
 
                     if (isDateValid) {
-                        if (ToDoList.tasks.get(parts[0]) != null) {
+                        if (TodoList.tasks.get(parts[0]) != null) {
                             return userInput;
                         } else {
                             System.out.println("ID doesn't exist, try again: ");
@@ -101,21 +101,21 @@ public class EditTask extends Actions {
 
         boolean isTaskEdited = false;
         if (!parts[1].equals("-")) {
-            ToDoList.tasks.get(parts[0]).setTitle(parts[1]);
+            TodoList.tasks.get(parts[0]).setTitle(parts[1]);
             isTaskEdited = true;
         }
 
         if (!parts[2].equals("-")) {
-            ToDoList.tasks.get(parts[0]).setDueDate(DateSorting.parseDate("dd-mm-yyyy", parts[2]));
+            TodoList.tasks.get(parts[0]).setDueDate(DateSorting.parseDate("dd-mm-yyyy", parts[2]));
             isTaskEdited = true;
         }
 
         if (!parts[3].equals("-")) {
-            ToDoList.tasks.get(parts[0]).setStatus(parts[3]);
+            TodoList.tasks.get(parts[0]).setStatus(parts[3]);
             isTaskEdited = true;
         }
         if (!parts[4].equals("-")) {
-            ToDoList.tasks.get(parts[0]).setProjectName(parts[4]);
+            TodoList.tasks.get(parts[0]).setProjectName(parts[4]);
             isTaskEdited = true;
         }
         if (isTaskEdited) {

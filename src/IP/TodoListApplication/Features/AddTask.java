@@ -55,7 +55,7 @@ public class AddTask extends Actions {
                 String[] parts = userInput.split(",");
                 if (parts.length == 5) {
                     if (DateSorting.isDateValid("dd-MM-yyyy", parts[2])) {
-                        if (ToDoList.tasks.get(parts[0]) == null) {
+                        if (TodoList.tasks.get(parts[0]) == null) {
                             return userInput;
                         } else {
                             System.out.println("A task with this ID already exists, try again: ");
@@ -85,7 +85,7 @@ public class AddTask extends Actions {
         Task task = Task.buildTask(parts[0], parts[1], DateSorting.parseDate("dd-MM-yyyy", parts[2]),
                 parts[3], parts[4]);
 
-        ToDoList.tasks.put(task.getId(), task);
+        TodoList.tasks.put(task.getId(), task);
         System.out.println("Task successfully added!");
 
     }

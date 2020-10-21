@@ -50,7 +50,7 @@ public class DateSorting extends Actions {
      */
     @Override
     public void executeAction(String command) {
-        List<Map.Entry<String, Task>> entries = new ArrayList<>(ToDoList.tasks.entrySet());
+        List<Map.Entry<String, Task>> entries = new ArrayList<>(TodoList.tasks.entrySet());
         Collections.sort(entries, new Comparator<Map.Entry<String, Task>>() {
             @Override
             public int compare(Map.Entry<String, Task> task1, Map.Entry<String, Task> task2) {
@@ -62,9 +62,9 @@ public class DateSorting extends Actions {
 
         });
 
-        ToDoList.tasks.clear();
+        TodoList.tasks.clear();
         entries.forEach((entry) -> {
-            ToDoList.tasks.put(entry.getKey(), entry.getValue());
+            TodoList.tasks.put(entry.getKey(), entry.getValue());
         });
 
         System.out.println("Tasks successfully Sorted!");

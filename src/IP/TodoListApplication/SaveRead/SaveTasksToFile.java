@@ -1,6 +1,6 @@
 package IP.TodoListApplication.SaveRead;
 
-import IP.TodoListApplication.App.ToDoList;
+import IP.TodoListApplication.App.TodoList;
 import IP.TodoListApplication.Features.Actions;
 
 import java.io.FileNotFoundException;
@@ -72,7 +72,7 @@ public class SaveTasksToFile extends Actions {
         try {
             PrintWriter pw = new PrintWriter(new FileOutputStream(path));
 
-            List<String> lines = ToDoList.tasks.entrySet().stream().map(entry -> entry.getValue().toString()).collect(Collectors.toList());
+            List<String> lines = TodoList.tasks.entrySet().stream().map(entry -> entry.getValue().toString()).collect(Collectors.toList());
 
             lines.forEach((line) -> {
                 pw.println(line);

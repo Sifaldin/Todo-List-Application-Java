@@ -15,7 +15,7 @@ import java.util.*;
  * @author Sif Aldin Abbas
  * @version 2020.10.24
  */
-public class ToDoList {
+public class TodoList {
 
     /**
      * linkedHashMap was used to maintain insertion order
@@ -34,7 +34,7 @@ public class ToDoList {
 
     public void start() {
         showApplicationTitle();
-        while (ToDoList.applicationRunning) {
+        while (TodoList.applicationRunning) {
             showAvailableActions();
             int actionNumber = readAction();
             executeAction(actionNumber);

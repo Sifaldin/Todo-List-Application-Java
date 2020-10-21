@@ -1,7 +1,7 @@
 package IP.TodoListApplication.SaveRead;
 
 import IP.TodoListApplication.App.Task;
-import IP.TodoListApplication.App.ToDoList;
+import IP.TodoListApplication.App.TodoList;
 import IP.TodoListApplication.DataSorting.DateSorting;
 import IP.TodoListApplication.Features.Actions;
 
@@ -72,10 +72,10 @@ public class ReadFromFile extends Actions {
                 String[] parts = file.split(",");
                 Task task = Task.buildTask(parts[0], parts[1], DateSorting.parseDate("dd-MM-yyyy", parts[2]),
                         parts[3], parts[4]);
-                if (ToDoList.tasks.get(parts[0]) != null) {
-                    ToDoList.tasks.replace(parts[0], task);
+                if (TodoList.tasks.get(parts[0]) != null) {
+                    TodoList.tasks.replace(parts[0], task);
                 } else {
-                    ToDoList.tasks.put(parts[0], task);
+                    TodoList.tasks.put(parts[0], task);
                 }
 
             }
