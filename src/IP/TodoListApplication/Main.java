@@ -1,12 +1,17 @@
 package IP.TodoListApplication;
 
-import IP.TodoListApplication.App.ToDoList;
+import IP.TodoListApplication.App.*;
 
 public class Main {
 
-    // 2, do coffee,12-12-2020,new,breakfast
+    /**
+     *
+     * Example of a task: 5, brew beer,01-12-2020,in-progress,Hangouts
+     *
+     * Example of a file path to read from or save to /Users/sifaldinabbas/Downloads/ToDoList/file.txt
+     *
+     */
 
-    // /Users/sifaldinabbas/Downloads/ToDoList/file.txt
     
     public static void main(String[] args) {
 

@@ -56,6 +56,9 @@ public class ReadFromFile extends Actions {
      * In this overridden method reside the implementation of
      * of how a given path is taken from the user
      * logged into to fetch information and display it to user
+     * <p>
+     * IMPORTANT after executing read, press 5 to display the files that was read
+     * from the file
      *
      * @param path path of the local file to be read by the program
      */
