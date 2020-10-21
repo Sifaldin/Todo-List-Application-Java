@@ -18,7 +18,7 @@ import java.util.Scanner;
  * @author Sif Aldin Abbas
  * @version 2020.10.24
  */
-public class ReadTasksFromFile extends Actions {
+public class ReadFromFile extends Actions {
     /**
      * This method purpose is to act as a user guide
      * on how reading a task is done and how it should be used for the user to

@@ -134,8 +134,8 @@ public class ToDoList {
                 }
                 break;
 
-            case Actions.READ_TASKS_FROM_FILE:
-                action = new ReadTasksFromFile();
+            case Actions.READ_FROM_FILE:
+                action = new ReadFromFile();
                 action.showActionsInformation();
                 String path = action.readUserInput();
                 if (!path.equals("0"))
@@ -175,7 +175,7 @@ public class ToDoList {
         System.out.println("6. Sort tasks by date");
         System.out.println("7. sort tasks by project");
         System.out.println("8. save tasks to file");
-        System.out.println("9. read tasks from file");
+        System.out.println("9. read from file");
         System.out.println("10. Exit");
         System.out.println("");
     }

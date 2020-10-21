@@ -70,16 +70,15 @@ public class SaveTasksToFile extends Actions {
     @Override
     public void executeAction(String path) {
         try {
-            PrintWriter print = new PrintWriter(new FileOutputStream(path));
+            PrintWriter pw = new PrintWriter(new FileOutputStream(path));
 
-            List<String> files = ToDoList.tasks.entrySet().stream().map(entry -> entry.getValue().toString()).collect((Collectors.toList()));
+            List<String> lines = ToDoList.tasks.entrySet().stream().map(entry -> entry.getValue().toString()).collect(Collectors.toList());
 
-            files.forEach(file -> {
-                print.println(file);
+            lines.forEach((line) -> {
+                pw.println(line);
             });
-
-            print.close();
-            System.out.println("Task successfully saved into file:   " + path);
+            pw.close();
+            System.out.println("task succesfully saved into file: " + path);
         } catch (FileNotFoundException e) {
             System.out.println("Path or file do not exist...");
         }
