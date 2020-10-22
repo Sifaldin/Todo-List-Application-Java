@@ -1,0 +1,4 @@
+5, do beer,01-12-2020,in-progress,anotherDinner
+2, do coffee,12-12-2020,new,breakfast
+4, do beer,12-12-2020,in-progress,dinner
+3, do tea,12-12-2020,new,lunch
