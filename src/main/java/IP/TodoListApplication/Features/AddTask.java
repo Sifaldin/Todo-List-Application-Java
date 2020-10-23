@@ -25,7 +25,7 @@ public class AddTask extends Actions {
     public void showActionsInformation() {
         System.out.println("");
         System.out.println("To add a new task, please follow the instructions and press ENTER:");
-        System.out.println("Task ID, Task Title, Due Date (format: dd-mm-yyyy), Task Status, Project Name");
+        System.out.println("IP.TodoListApplication.App.Task ID, IP.TodoListApplication.App.Task Title, Due Date (format: dd-mm-yyyy), IP.TodoListApplication.App.Task Status, Project Name");
         System.out.println("");
         System.out.println("Enter 0 to RETURN");
     }
@@ -86,7 +86,7 @@ public class AddTask extends Actions {
                 parts[3], parts[4]);
 
         TodoList.tasks.put(task.getId(), task);
-        System.out.println("Task successfully added!");
+        System.out.println("IP.TodoListApplication.App.Task successfully added!");
 
     }
 }

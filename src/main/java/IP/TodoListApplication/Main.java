@@ -14,7 +14,11 @@ public class Main {
      * Example of a file path to read from or save to
      * /XXXX/XXXX/XXXX/file.txt
      *
-     * @param args
+     *
+     * After reading press 5 to display the tasks that were read from the file.
+     *
+     * Enjoy using the program!
+     *
      */
     public static void main(String[] args) {
 

@@ -9,11 +9,11 @@
 <p id="the-user-will-be-able-to-build-and-create-tasks-with-the-use-of-this-class.">The user will be able to build and create tasks with the use of this class.</p>
 <h2 id="add-tasks">Add Tasks</h2>
 <P id="the-user-will-be-able-to-add-the-task-that-he-already-created-to-the-todo-list-using-this-feature.">The user will be able to add the task that he already created to the Todo List, using this feature.</P>
-<h2 id="edit-task">Edit Task</h2>
+<h2 id="edit-task">Edit IP.TodoListApplication.App.Task</h2>
 <P id="this-will-give-the-user-the-ability-to-search-and-identify-a-certain-task-using-the-the-id-number-and-edit-some-or-all-parts-of-the-task-as-desired-and-then-update-the-list-itself.">This will give the user the ability to search and identify a certain task using the the ID number and edit some or all parts of the task as desired and then update the list itself.</P>
 <h2 id="mark-as-done">Mark As Done</h2>
 <P id="by-using-this-feature-the-user-will-be-able-to-set-the-task-as-done-once-they-feel-they-are-satisfied-with-the-task.">By using this feature, The user will be able to set the task as done, once they feel they are satisfied with the task.</P>
-<h2 id="remove-task">Remove Task</h2>
+<h2 id="remove-task">Remove IP.TodoListApplication.App.Task</h2>
 <P id="you-can-delete-the-current-file-by-chosing-the-remove-option-the-file-will-be-taken-out-of-the-list-after-the-use-had-searched-and-identified-the-specific-folder-to-be-deleted.">You can delete the current file by chosing the <strong>Remove</strong> option, The file will be taken out of the list after the use had searched and identified the specific folder to be deleted.</P>
 <h2 id="tasks-display">Tasks Display</h2>
 <P id="you-can-display-all-tasks-by-choosing-display-all-tasks-option-this-will-fetch-all-related-data-to-tasks-given-in-the-todo-list.">You can display all tasks, by choosing <strong>Display All Tasks</strong> option, this will fetch all related data to tasks given in the Todo List.</P>

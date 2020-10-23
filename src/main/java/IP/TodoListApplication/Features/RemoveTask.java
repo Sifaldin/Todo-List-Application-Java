@@ -84,7 +84,7 @@ public class RemoveTask extends Actions {
     public void executeAction(String command) {
         TodoList.tasks.remove(command);
 
-        System.out.println("Task with ID: " + command + ", was successfully removed...");
+        System.out.println("IP.TodoListApplication.App.Task with ID: " + command + ", was successfully removed...");
 
     }
 }
