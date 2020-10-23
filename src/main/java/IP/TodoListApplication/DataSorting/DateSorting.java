@@ -96,8 +96,8 @@ public class DateSorting extends Actions {
     }
 
     /**
-     * This method return a string format of the date to be added and returned
-     * to the console
+     * This method return a string format of the LocalDate date
+     * to be added and returned to the console
      *
      * @param date   due date
      * @param format date format pattern
@@ -117,11 +117,11 @@ public class DateSorting extends Actions {
 
     /**
      * parseDate parses a string representation of the given date
-     * for it to be used in adding tasks
+     *
      *
      * @param format date format pattern
      * @param value  value that equals the component in the task format
-     * @return localDate as a parsed string of the given date
+     * @return localDate  parsed of the given String date
      */
     public static LocalDate parseDate(String format, String value) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);

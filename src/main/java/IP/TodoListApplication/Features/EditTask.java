@@ -26,7 +26,7 @@ public class EditTask extends Actions {
     public void showActionsInformation() {
         System.out.println("");
         System.out.println("to update a task, follow the instructions and press ENTER: ");
-        System.out.println("Task ID, Task Title, Due Date (format: dd-mm-yyyy), Task Status, Project Name");
+        System.out.println("IP.TodoListApplication.App.Task ID, IP.TodoListApplication.App.Task Title, Due Date (format: dd-mm-yyyy), IP.TodoListApplication.App.Task Status, Project Name");
         System.out.println("ID here represent the ID of the task where an update will occur");
         System.out.println("insert a (-) when an update is not needed to that specific parameter");
         System.out.println("");
