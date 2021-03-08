@@ -7,6 +7,7 @@
 
 ##### Once the user is using the application, he/she should be able to also edit, mark as done or remove tasks. They can also quit and save the current task list to file, and then restart the application with the former state restored.
 
+<img src="./Resources/Diagrams/Detailed UML Diagram.png">
 
 ## The solution achieves the following requirements:
 
