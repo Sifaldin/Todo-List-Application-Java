@@ -16,3 +16,12 @@
 ##### ‣ Support the ability to add, edit, mark as done, and remove tasks
 ##### ‣ Support a text-based user interface
 ##### ‣ Load and save task list to file
+
+
+### Sequence Diagram
+
+<img src="./Resources/Diagrams/Sequence Diagram.png">
+
+### User Case Diagram
+
+<img src="./Resources/Diagrams/User Case Diagram.png">
