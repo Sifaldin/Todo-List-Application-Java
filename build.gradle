@@ -28,6 +28,11 @@ dependencies {
     testImplementation 'junit:junit:4.13'
 }
 
+run {
+    // Add the standard input as an input to the application.
+    standardInput = System.in
+}
+
 application {
     // Define the main class for the application.
     mainClassName = 'IP.TodoListApplication.Main'
