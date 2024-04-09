@@ -15,6 +15,10 @@ import java.util.Scanner;
  * @version 2020.10.24
  */
 public class AddTask extends Actions {
+    Scanner in;
+    public AddTask() {
+        this.in = new Scanner(System.in);
+    }
 
     /**
      * This method purpose is to act as a user guide
@@ -46,11 +50,69 @@ public class AddTask extends Actions {
     @Override
     public String readUserInput() {
         while (true) {
-            System.out.println("");
-            System.out.print("Enter Information: ");
-            Scanner in = new Scanner(System.in);
-            String userInput = in.nextLine();
+            String userInput = "";
+            String taskID = "";
+            String taskTitle = "";
+            String dueDate = "";
 
+            boolean validTaskID = false;
+            boolean validDate = false;
+
+            while(!validTaskID && !taskID.equals("0")) {
+                System.out.print("Enter Task ID: ");
+                taskID = this.in.nextLine();
+                
+                if (TodoList.tasks.get(taskID) == null) {
+                    validTaskID = true;
+                } else if (taskID.equals("0")) {
+                    break;
+                } else {
+                    System.out.println("A task with this ID already exists, try again: ");
+                }
+            }
+
+            if (taskID.equals("0")) {
+                return "0";
+            }
+
+            System.out.print("Enter Task Title: ");
+            taskTitle = this.in.nextLine();
+            
+            if (taskTitle.equals("0")) {
+                return "0";
+            }
+
+            while(!validDate) {
+                System.out.print("Enter Due Date (format: dd-mm-yyyy): ");
+                dueDate = this.in.nextLine();
+                
+                if (DateSorting.isDateValid("dd-MM-yyyy", dueDate)) {
+                    validDate = true;
+                }  else if (dueDate.equals("0")) {
+                    return "0";
+                } else {
+                    System.out.println("The date entered is invalid, try again: ");
+                } 
+            }
+
+            System.out.print("Enter Task Status: ");
+            String taskStatus = this.in.nextLine();
+            if (taskStatus.equals("0")) {
+                return "0";
+            }
+
+            System.out.print("Enter Project Name: ");
+            String projectName = this.in.nextLine();
+
+            if (projectName.equals("0")) {
+                return "0";
+            }
+
+            userInput = String.format("%s,%s,%s,%s,%s", taskID, taskTitle, dueDate, taskStatus, projectName);
+            
+            return userInput;
+
+            /*
             if (!userInput.equals("0")) {
                 String[] parts = userInput.split(",");
                 if (parts.length == 5) {
@@ -69,6 +131,7 @@ public class AddTask extends Actions {
             } else {
                 return userInput;
             }
+            */
         }
     }
 
