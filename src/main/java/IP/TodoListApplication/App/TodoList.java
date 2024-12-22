@@ -1,8 +1,10 @@
 package IP.TodoListApplication.App;
 
+import IP.TodoListApplication.DataSorting.DateSorting;
+import IP.TodoListApplication.DataSorting.ProjectSorting;
 import IP.TodoListApplication.Features.*;
-import IP.TodoListApplication.DataSorting.*;
-import IP.TodoListApplication.SaveRead.*;
+import IP.TodoListApplication.SaveRead.ReadFromFile;
+import IP.TodoListApplication.SaveRead.SaveTasksToFile;
 
 import java.util.*;
 
@@ -165,7 +167,7 @@ public class TodoList {
      * Will be used to print all valid actions
      */
     public void showAvailableActions() {
-        System.out.println("");
+        System.out.println();
         System.out.println("1. Add a task");
         System.out.println("2. Mark task as done");
         System.out.println("3. Remove task ");
@@ -176,7 +178,7 @@ public class TodoList {
         System.out.println("8. save tasks to file");
         System.out.println("9. read from file");
         System.out.println("10. Exit");
-        System.out.println("");
+        System.out.println();
     }
 
     /**
@@ -188,19 +190,24 @@ public class TodoList {
      */
     public int readAction() {
         List<Integer> availableActions = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Scanner scan = new Scanner(System.in);
         while (true) {
             try {
                 System.out.print("Enter action: ");
-                Scanner scan = new Scanner(System.in);
-                int action = scan.nextInt();
+                if (!scan.hasNext()) {
+                    System.out.println("\nEOF detected. Exiting...");
+                    System.exit(0);
+                }
+                String input = scan.next();
+                int action = Integer.parseInt(input);
                 if (availableActions.contains(action)) {
                     return action;
                 } else {
                     System.out.println("Please enter a valid action from the list: ");
                 }
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Action must be a number...");
-
+                scan.nextLine();
             }
         }
     }
